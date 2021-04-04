@@ -11,7 +11,7 @@ email: yuchen.lin@usc.edu
 description: >- # this means to ignore newlines until "baseurl:"
   OpenCSR's project page. 
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://open-csr.gtihub.io/" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://open-csr.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: billyuchenlin
 github_username:  yuchenlin
 
