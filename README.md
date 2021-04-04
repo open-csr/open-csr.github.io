@@ -1,5 +1,4 @@
-# The Portal Site for Commonsense Reasoning Research
-
+# Project page of OpenCSR
 
 The website url is [https://open-csr.gtihub.io/](https://open-csr.gtihub.io/), and it is based on [Jekyll](https://docs.github.com/en/github/working-with-github-pages/setting-up-a-github-pages-site-with-jekyll) and [Just-the-Docs](https://pmarsceill.github.io/just-the-docs/) template.
 
