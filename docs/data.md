@@ -30,33 +30,59 @@ Below are two examples for **training/validation** instances:
 ```json
 // Example 1
 {
-  "_id": "OBQA-257",  // unique example id
-  "question": "Global warming is lowering the world's amount of ( ___ ) ",  // input: question text
-  "entities": ["global warming", "global", "warming", "world", "amount"],  // optional info: simple concept matching.
-  "original_choice": "ice", // optional info: correct choice of the original data
-  "all_answer_concepts": ["ice"]  // output: answer concepts that a model needs to retrieve
+  "_id": "OBQA-257",  
+    // unique example id
+  "question": "Global warming is lowering the world's amount of ( ___ ) ",  
+    // input: question text
+  "question_concepts": ["global warming", "global", "warming", "world", "amount"],  
+    // supplmentary info: simple concept matching over the question text.
+  "original_choice_text": "ice", 
+    // supplmentary info: correct choice of the original data
+  "all_answer_concepts": ["ice"],
+    // output: answer concepts that a model needs to retrieve
+  "all_answer_concepts_decomp": ["ice"]
+    // supplmentary info: the decomposition of the "all_answer_concepts"
 }
+
 // Example 2
+{
+  "_id": "ARC-Mercury_7267873", 
+  "question": "What provide the best evidence that life could develop on Mars?", 
+  "question_concepts": ["evidence", "life", "develop", "mars"], 
+  "original_choice_text": "its ice and organic molecules", 
+  "all_answer_concepts": ["organic molecule", "ice"],
+  "all_answer_concepts_decomp": ["organic molecule", "ice", "organic", "molecule"]
+}
+```
+<!-- 
+// Example 3
 {
   "_id": "ARC-Mercury_400056", // unique example id
   "question": "What plant trait is inherited?", // task input: question text
-  "entities": ["plant", "trait"], // optional info: simple concept matching.
-  "original_choice": "the shape of its leaves", // optional info: correct choice of the original data  
-  "all_answer_concepts": ["shape", "leave"]
+  "entities": ["plant", "trait"], 
+    // optional info: simple concept matching.
+  "original_choice": "the shape of its leaves", 
+    // optional info: correct choice of the original data  
+  "all_answer_concepts": ["shape", "leaf"]
     // output: answer concepts that a model needs to retrieve (as many as possible)
 }
-```
 
-Here is an example of the *test* data:
+ -->
+
+Here is an example of the *test* data (the last two items are hidden):
 
 ```json
 {
   "_id": "ARC-Mercury_SC_400328", 
-  "question": "What item is used for protection from chemical splashing? ( ___ ) ", 
-  "entities": ["chemical splashing", "item", "use", "protection", "chemical"], 
-  "original_choice": "safety goggle", // hidden
+    // unique example id
+  "question": "What item is used for protection from chemical splashing?", 
+  "question_concepts": ["chemical splashing", "item", "use", "protection", "chemical"], 
+    // supplmentary info: simple concept matching over the question text.
+  "original_choice_text": "safety goggle", 
+    // hidden info.
   "all_answer_concepts": ["safety goggle", "lab coat", "rubber boot", "protective glove", "face shield", "helmet", "shoe", "glass", "goggle", "glove", "coverall"] 
-    // hidden and used for evaluaiton. (The first one is from the original data, and others are from our crowdsourcing.)
+    // hidden info; used for evaluaiton. 
+    // The first one is from the original choice, and others are from our crowdsourcing.
 }
 ```
 
