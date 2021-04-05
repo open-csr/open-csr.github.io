@@ -327,10 +327,7 @@ GPUS=0 OUT_DIR=${ODIR} DATASET=${DATA} bash run_drfact.sh \
     --num_preds -1 \
     --embed_index_prefix ${DATASET}_dpr_bert_base \
     --$DO 2> ${LOG_FILE} &
-
-  # --embed_index_prefix OCSR_dpr_bert_base \
-  # --embed_index_prefix nq_dpr_bert_base \
-  # --embed_index_prefix ${DATASET}_dpr_bert_base \
+    
   echo " "
   echo ${LOG_FILE}
 
