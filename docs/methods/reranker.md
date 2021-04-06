@@ -1,6 +1,6 @@
 ---
 layout: default
-title:  Concept Reranker
+title:  Concept Re-ranker
 nav_order: 5
 # toc_list: true
 parent: Methods
@@ -9,7 +9,7 @@ permalink: /methods/reranker
 has_toc: true
 ---
 
-# Concept Reranker
+# Concept Re-ranker
 {: .no_toc .text-delta }
 
 - TOC
@@ -71,29 +71,27 @@ done
 
 ### Split the data for training the rerankers.
 ```bash
-declare -a rets=("BM25" "DPR")
-for RET in "${rets[@]}"
-do
-  mkdir baseline_methods/MCQA/data/ARC/
-  tail -300 baseline_methods/MCQA/data/ARC.train.${RET}.jsonl > baseline_methods/MCQA/data/ARC/val.${RET}.jsonl
-  cp baseline_methods/MCQA/data/ARC.dev.${RET}.jsonl baseline_methods/MCQA/data/ARC/test.${RET}.jsonl
-  cp baseline_methods/MCQA/data/ARC.train.${RET}.jsonl baseline_methods/MCQA/data/ARC/train.${RET}.jsonl
+RET=BM25
 
-  mkdir baseline_methods/MCQA/data/QASC/
-  tail -300 baseline_methods/MCQA/data/QASC.train.${RET}.jsonl > baseline_methods/MCQA/data/QASC/val.${RET}.jsonl
-  cp baseline_methods/MCQA/data/QASC.dev.${RET}.jsonl baseline_methods/MCQA/data/QASC/test.${RET}.jsonl
-  cp baseline_methods/MCQA/data/QASC.train.${RET}.jsonl baseline_methods/MCQA/data/QASC/train.${RET}.jsonl
+mkdir baseline_methods/MCQA/data/ARC/
+tail -300 baseline_methods/MCQA/data/ARC.train.${RET}.jsonl > baseline_methods/MCQA/data/ARC/val.${RET}.jsonl
+cp baseline_methods/MCQA/data/ARC.dev.${RET}.jsonl baseline_methods/MCQA/data/ARC/test.${RET}.jsonl
+cp baseline_methods/MCQA/data/ARC.train.${RET}.jsonl baseline_methods/MCQA/data/ARC/train.${RET}.jsonl
 
-  mkdir baseline_methods/MCQA/data/OBQA/
-  tail -300 baseline_methods/MCQA/data/OBQA.train.${RET}.jsonl > baseline_methods/MCQA/data/OBQA/val.${RET}.jsonl
-  cp baseline_methods/MCQA/data/OBQA.dev.${RET}.jsonl baseline_methods/MCQA/data/OBQA/test.${RET}.jsonl
-  cp baseline_methods/MCQA/data/OBQA.train.${RET}.jsonl baseline_methods/MCQA/data/OBQA/train.${RET}.jsonl
-done
+mkdir baseline_methods/MCQA/data/QASC/
+tail -300 baseline_methods/MCQA/data/QASC.train.${RET}.jsonl > baseline_methods/MCQA/data/QASC/val.${RET}.jsonl
+cp baseline_methods/MCQA/data/QASC.dev.${RET}.jsonl baseline_methods/MCQA/data/QASC/test.${RET}.jsonl
+cp baseline_methods/MCQA/data/QASC.train.${RET}.jsonl baseline_methods/MCQA/data/QASC/train.${RET}.jsonl
+
+mkdir baseline_methods/MCQA/data/OBQA/
+tail -300 baseline_methods/MCQA/data/OBQA.train.${RET}.jsonl > baseline_methods/MCQA/data/OBQA/val.${RET}.jsonl
+cp baseline_methods/MCQA/data/OBQA.dev.${RET}.jsonl baseline_methods/MCQA/data/OBQA/test.${RET}.jsonl
+cp baseline_methods/MCQA/data/OBQA.train.${RET}.jsonl baseline_methods/MCQA/data/OBQA/train.${RET}.jsonl
 ```
 
 
 
-## Training a MCQA model as a reranker w/ BM25 distractors.
+## Training a MCQA model as a reranker w/ distractors.
 ```bash 
 gpu=0
 declare -a datasets=("ARC" "OBQA" "QASC")  
@@ -159,7 +157,7 @@ do
 done
 ```
 
-Using BM25 models for DrFact and DrKIT
+Using the Reranker for DrFact and DrKIT
 ```bash
 declare -a datasets=("ARC" "OBQA" "QASC")  
 declare -a rets=("drfact" "drkit")
@@ -186,28 +184,12 @@ done
 ```
 
 
-## Convert npy prediction file to results
+## Convert npy prediction files to results
 
 ```bash
 mkdir baseline_methods/MCQA/results/
 declare -a datasets=("ARC" "OBQA" "QASC")
 declare -a rets=("BM25" "DPR" "drfact" "drkit")
-for DATA_NAME in "${datasets[@]}"
-do 
-  for RET in "${rets[@]}"
-  do
-    python baseline_methods/MCQA/convert_mcqa_predictions.py \
-    --pred_result_file baseline_methods/MCQA/data/${DATA_NAME}/test.${RET}.npy \
-    --mcqa_file baseline_methods/MCQA/data/${DATA_NAME}.dev.${RET}.jsonl \
-    --reference_result_file baseline_methods/BM25/results/${DATA_NAME}_dev_max_result.jsonl \
-    --converted_result_file baseline_methods/MCQA/results/${DATA_NAME}_${RET}_MCQA_result.jsonl &
-  done 
-done
-
-
-declare -a datasets=("ARC" "OBQA" "QASC")
-# declare -a rets=("drfact" "drkit")
-declare -a rets=("OCSR-DPR")
 for DATA_NAME in "${datasets[@]}"
 do 
   for RET in "${rets[@]}"

@@ -16,6 +16,23 @@ has_toc: true
 {:toc}
 
 
+---
+
+Please cite the original paper
+```bib
+@inproceedings{Karpukhin2020DensePR,
+  title={Dense Passage Retrieval for Open-Domain Question Answering},
+  author={V. Karpukhin and Barlas Oğuz and Sewon Min and Patrick Lewis and Ledell Yu Wu and Sergey Edunov and Danqi Chen and Wen-tau Yih},
+  booktitle={EMNLP},
+  year={2020}
+}
+```
+
+**Link to the code for the experiment:** [OpenCSR/baseline_methods/DPR/](https://github.com/yuchenlin/OpenCSR/baseline_methods/DPR)
+
+---
+
+
 ## Installation
 
 ### Basic dependency.
