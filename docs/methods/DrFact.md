@@ -111,7 +111,8 @@ do
 done 
 ```
 
-
+**Link to the original repo of DrKIT:** [google-research/language/labs/drkit/](https://github.com/google-research/language/tree/master/language/labs/drkit)
+**Link to the code for the experiment:** [google-research/drfact/](https://github.com/google-research/google-research/tree/master/drfact)
 
 ### Generate distant supervision. (Optional)
 
@@ -327,7 +328,7 @@ GPUS=0 OUT_DIR=${ODIR} DATASET=${DATA} bash run_drfact.sh \
     --num_preds -1 \
     --embed_index_prefix ${DATASET}_dpr_bert_base \
     --$DO 2> ${LOG_FILE} &
-    
+
   echo " "
   echo ${LOG_FILE}
 

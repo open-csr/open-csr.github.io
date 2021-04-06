@@ -20,15 +20,17 @@ has_toc: true
 
 Please cite the original paper
 ```bib
-@inproceedings{Karpukhin2020DensePR,
-  title={Dense Passage Retrieval for Open-Domain Question Answering},
-  author={V. Karpukhin and Barlas Oğuz and Sewon Min and Patrick Lewis and Ledell Yu Wu and Sergey Edunov and Danqi Chen and Wen-tau Yih},
-  booktitle={EMNLP},
-  year={2020}
+@inproceedings{
+    Dhingra2020Differentiable,
+    title={Differentiable Reasoning over a Virtual Knowledge Base},
+    author={Bhuwan Dhingra and Manzil Zaheer and Vidhisha Balachandran and Graham Neubig and Ruslan Salakhutdinov and William W. Cohen},
+    booktitle={International Conference on Learning Representations},
+    year={2020},
+    url={https://openreview.net/forum?id=SJxstlHFPH}
 }
 ```
-
-**Link to the code for the experiment:** [OpenCSR/baseline_methods/DPR/](https://github.com/yuchenlin/OpenCSR/baseline_methods/DPR)
+**Link to the original repo of DrKIT:** [google-research/language/labs/drkit/](https://github.com/google-research/language/tree/master/language/labs/drkit)
+**Link to the code for the experiment:** [OpenCSR/language-master/labs/drfact/](https://github.com/yuchenlin/OpenCSR/language-master/labs/drfact/)
 
 ---
 
