@@ -16,6 +16,9 @@ has_toc: true
 {:toc}
 
 
+<!-- ## Illustration
+![DrFact](/images/opencsr_t3.png) -->
+
 ## Installation
 
 ### Basic dependency.

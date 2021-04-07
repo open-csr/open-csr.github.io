@@ -10,6 +10,30 @@ last_modified_date: April 1st 2021
 # OpenCSR: <br> Open-Ended Common-Sense Reasoning
 {: .fs-7 .fw-700 .text-blue-300 }
 
+--- 
+
+<span class="fs-2">
+<!-- **(Sorted by Year)** <br> -->
+[Data](/data){: .btn .btn-green .mr-1 }
+[Methods](/methods){: .btn .btn-purple .mr-1 }
+[Metrics](/metrics){: .btn .btn-blue .mr-1 }
+[Leaderboard](/leaderboard){: .btn .btn-red .mr-1 }
+</span>
+
+
+---
+This is the project page of the paper, [_Differentiable Open-Ended Commonsense Reasoning_](https://arxiv.org/abs/2010.14439){: target="_blank"}, by [_Bill Yuchen Lin_](https://yuchenlin.xyz/){: target="_blank"}, [_Haitian Sun_](https://scholar.google.com/citations?user=opSHsTQAAAAJ&hl=en){: target="_blank"}, [_Bhuwan Dhingra_](http://www.cs.cmu.edu/~bdhingra/){: target="_blank"}, [_Manzil Zaheer_](https://scholar.google.com/citations?user=A33FhJMAAAAJ&hl=en){: target="_blank"}, [_Xiang Ren_](http://ink-ron.usc.edu/xiangren/){: target="_blank"}, and [_William W. Cohen_](https://wwcohen.github.io/){: target="_blank"}, (to appear) in Proc. of [*NAACL 2021*](https://2021.naacl.org/){: target="_blank"}. The work was mainly done during Lin’s
+research internship at [Google](https://research.google/research-areas/natural-language-processing/){: target="_blank"}.
+
+```bib
+@inproceedings{lin2021opencsr,
+  title={Differentiable Open-Ended Commonsense Reasoning},
+  author={Bill Yuchen Lin, Haitian Sun, Bhuwan Dhingra, Manzil Zaheer, Xiang Ren, William W. Cohen},
+  booktitle={NAACL-HLT},
+  year={2021},
+  note={to appear}
+}
+```
 ---
 
 <!-- 
@@ -22,23 +46,44 @@ last_modified_date: April 1st 2021
     }
  
     table th:first-of-type {
-        width: 10%;
+        width: 10
     }
     table th:nth-of-type(2) {
-        width: 10%;
+        width: 10
     }
     table th:nth-of-type(3) {
-        width: 50%;
+        width: 50
     }
     table th:nth-of-type(4) {
-        width: 30%;
+        width: 30
     } 
 
     </style> -->
 
 
 
-<!-- ![Introduction of OpenCSR](intro.png){: style="text-align:center; display:block; margin-left: auto; margin-right: auto;" width="95%"} -->
 
-{: .fs-5 .fw-300 }
-This is the introduction.
+![Introduction of OpenCSR](images/opencsr_t1.png){: style="text-align:center; display:block; margin-left: auto; margin-right: auto;" width="100%"}
+ 
+<!-- {: .fs-3 .fw-300 } -->
+### Abstract
+Current commonsense reasoning research  focuses on developing models that use commonsense knowledge to answer *multiple-choice* questions.
+However, systems designed to answer multiple-choice questions may not be useful in applications that do not provide a small list of candidate answers to choose from.
+As a step towards making commonsense reasoning research more realistic and useful, 
+we propose to study open-ended commonsense reasoning (OpenCSR) --- the task of answering a commonsense question without any pre-defined choices --- using as a resource only a knowledge corpus of commonsense facts written in natural language.
+
+
+OpenCSR is challenging due to a large decision space, and because many questions require implicit multi-hop reasoning.
+As an approach to OpenCSR, we propose **_DrFact_**, an efficient Differentiable model for multi-hop Reasoning over knowledge Facts.
+To evaluate OpenCSR methods, 
+we adapt three popular multiple-choice datasets, and collect multiple new answers to each test question via crowd-sourcing.
+Experiments show that DrFact outperforms strong baseline methods by a large margin.
+
+
+### Overview of the proposed DrFact method
+We propose DrFact, a multi-hop reasoning method for OpenCSR. 
+Instead of using structured KGs limited to facts with binary relations, 
+we focus on reasoning with a knowledge corpus consisting of generic commonsense facts.
+We formulate multi-hop reasoning as transitions over a hyper-graph, where nodes are concepts (i.e., noun chunks) and hyperedges as facts (i.e., fact sentences). DrFact iteratively merges MIPS results from dense fact index and sparse fact-to-fact matrix, in a differentiable way for end-to-end learning. The below figures show 1) pre-computing steps for representing a knowledge corpus (e.g., GenericsKB), 2) the formulation of multi-hop reasoning via iterative fact-following, and 3) the concrete implementation of differentiable fact-follow operations.
+
+![DrFact](/images/opencsr_t3.png){: style="text-align:center; display:block; margin-left: auto; margin-right: auto;" width="100%"}
