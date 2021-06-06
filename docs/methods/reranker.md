@@ -23,11 +23,13 @@ has_toc: true
 conda create --name mcqa python=3.7
 conda activate mcqa
 pip install torch==1.4.0 torchvision==0.5.0 -f https://download.pytorch.org/whl/cu100/torch_stable.html
+pip install transformers==3.5.1
+pip install tensorboardX
+pip install absl-py
+# install apex if you want to use fp16 to speed up
 git clone https://github.com/NVIDIA/apex
 cd apex
 pip install -v --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" ./
-pip install tensorboardX
-pip install absl-py
 ```
 
 
@@ -137,7 +139,6 @@ for DATA_NAME in "${datasets[@]}"
 do
   for RET in "${rets[@]}"
   do 
-    # echo "CUDA_VISIBLE_DEVICES=${gpu},${gpup},${gpupp},${gpuppp} ${DATA_NAME}-${RET}"
     DATA_DIR=baseline_methods/MCQA/data/${DATA_NAME}/
     CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7,8 python baseline_methods/MCQA/run_mcqa.py \
       --task_name opencsr \
