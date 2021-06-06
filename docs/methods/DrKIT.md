@@ -29,10 +29,9 @@ Please cite the original paper
     url={https://openreview.net/forum?id=SJxstlHFPH}
 }
 ```
+
+Note t
 **Link to the original repo of DrKIT:** [google-research/language/labs/drkit/](https://github.com/google-research/language/tree/master/language/labs/drkit)
-**Link to the code for the experiment:** [google-research/drfact/](https://github.com/google-research/google-research/tree/master/drfact)
-
-
 ---
 
 

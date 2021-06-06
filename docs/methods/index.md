@@ -20,7 +20,7 @@ permalink: /methods/
 
 ---
 
-[**The site is under active development. The links to the datasets and code will be updated asap.  Please come back and check it out in a few days.**](){: .btn .btn-red .fs-4 target="_blank"}
+[The site is under development. Please email yuchen.lin@usc.edu if you have any questions.](){: .btn .btn-red .fs-4 target="_blank"}
 
 # Methods for OpenCSR
 
