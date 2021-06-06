@@ -10,7 +10,7 @@ has_toc: true
 
 # The OpenCSR Data
 
-[The site is under development. Please email yuchen.lin@usc.edu if you have any questions.](){: .btn .btn-red .fs-4 target="_blank"}
+[The site is under development. Please email [***yuchen.lin@usc.edu***] if you have any questions.](){: .btn .btn-red .fs-4 target="_blank"}
 
 ## Table of contents
 {: .no_toc .text-delta }
