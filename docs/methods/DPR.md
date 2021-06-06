@@ -18,7 +18,7 @@ has_toc: true
 ---
 
 Please cite the original paper
-```bib
+```bibtex
 @inproceedings{Karpukhin2020DensePR,
   title={Dense Passage Retrieval for Open-Domain Question Answering},
   author={V. Karpukhin and Barlas Oğuz and Sewon Min and Patrick Lewis and Ledell Yu Wu and Sergey Edunov and Danqi Chen and Wen-tau Yih},

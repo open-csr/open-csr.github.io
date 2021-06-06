@@ -19,7 +19,7 @@ has_toc: true
 ---
 
 Please cite the original paper
-```bib
+```bibtex
 @inproceedings{
     Dhingra2020Differentiable,
     title={Differentiable Reasoning over a Virtual Knowledge Base},

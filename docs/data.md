@@ -112,7 +112,7 @@ Here is an example of the *test* data (the answers are hidden for the shared tas
 
 
 **Please also cite the papers of these original datasets if you use the data here.** 
-```bib
+```bibtex
 @article{clark2018think,
   title={Think you have solved question answering? try arc, the ai2 reasoning challenge},
   author={Clark, Peter and Cowhey, Isaac and Etzioni, Oren and Khot, Tushar and Sabharwal, Ashish and Schoenick, Carissa and Tafjord, Oyvind},
@@ -145,7 +145,7 @@ This zip file contains the same data as above, while it also includes results of
 
 [Download the Preprocessed Corpus](https://mega.nz/folder/9ToQWLQJ#PxGYM-wymiOI4YRCNyyafA){: .btn .btn-blue .fs-2 target="_blank"}
 
-We use the [GenericsKB](https://allenai.org/data/genericskb){: target="_blank"} as our knowledge corpus. We preprocess the coprus, extract the frequent concepts, and finally link the facts to their mentioned concepts. The link contains two files:
+We use the [GenericsKB](https://allenai.org/data/genericskb){: target="_blank"} as our knowledge corpus. We preprocess the corpus, extract the frequent concepts, and finally link the facts to their mentioned concepts. The link contains two files:
 
 - `gkb_best.drfact_format.jsonl` consists of generics commonsense facts, each of which is a statement of common knowledge. (See an example below.)
 - `gkb_best.vocab.txt` is the vocabulary of the concepts (i.e., noun chunks) sorted by their frequency.
@@ -168,7 +168,7 @@ Here is an example json line for the commonsense fact: "_Trees remove dust and p
 
 **Please also cite the GenericsKB paper if you use the data here.**
 
-```bib
+```bibtex
 @article{Bhakthavatsalam2020GenericsKBAK,
   title={GenericsKB: A Knowledge Base of Generic Statements},
   author={Sumithra Bhakthavatsalam and Chloe Anastasiades and P. Clark},
