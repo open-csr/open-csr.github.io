@@ -159,8 +159,8 @@ rm ${INDEX_PATH}/drkit_mention_index/${PREFIX}_fact_feats_*.*
 DATA=ARC
 ODIR=~/drfact_models/drkit_models_${DATA}
 HOP=3 # can be any integer.
-GPUS=0 OUT_DIR=${ODIR} DATASET=${DATA} bash run_drkit.sh train ${HOP}   # Training
-GPUS=1 OUT_DIR=${ODIR} DATASET=${DATA} bash run_drkit.sh continual_eval ${HOP}  # Online Evaluation on Dev
+GPUS=0 OUT_DIR=${ODIR} DATASET=${DATA} bash scripts/run_drkit.sh train ${HOP}   # Training
+GPUS=1 OUT_DIR=${ODIR} DATASET=${DATA} bash scripts/run_drkit.sh continual_eval ${HOP}  # Online Evaluation on Dev
 # the log file will be at `${ODIR}/hop_${HOP}/tf_log.cont_eval.txt`
 ```
 
@@ -171,7 +171,7 @@ GPUS=1 OUT_DIR=${ODIR} DATASET=${DATA} bash run_drkit.sh continual_eval ${HOP}  
 DATA=ARC
 ODIR=~/drfact_models/drkit_models_${DATA}
 HOP=3
-GPUS=0 OUT_DIR=${ODIR} DATASET=${DATA} bash run_drkit.sh \
+GPUS=0 OUT_DIR=${ODIR} DATASET=${DATA} bash scripts/run_drkit.sh \
     predict ${HOP} [checkpoint_name] [train|dev|test] 
 # an example string for the checkpoint_name is "model.ckpt-14600"
 ```
