@@ -201,7 +201,7 @@ do
   DATA_FOLDER=drfact_data/datasets/${DATA_NAME} 
   for SPLIT in "${splits[@]}"
   do
-    python baseline_methods/DPR/dpr_result_analysis.py \
+    python baseline_methods/DPR/dpr_result_formatter.py \
       --linked_qa_file ${DATA_FOLDER}/linked_${SPLIT}.jsonl \
       --output_prefix ${DATA_NAME}_DPR \
       --drfact_format_gkb_file ${CORPUS_PATH}/gkb_best.drfact_format.jsonl \
