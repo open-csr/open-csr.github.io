@@ -50,8 +50,9 @@ pip install spacy
 ## Preprocessing 
 
 ### Step 1. Transform the data format of the corpus.
-**You can skip this step**. We have included the processed tsv file at `drfact_data/knowledge_corpus/gkb_best.prepro.tsv`.
+**You can skip this step**. We have included the processed tsv file at `gkb_best.prepro.tsv` under `drfact_data/knowledge_corpus/`.
 ```bash
+python -m language.labs.drfact.preprocessing.corpus_prepro   --DATA_ROOT drfact_data/knowledge_corpus   --CORPUS_PATH GenericsKB-Best.tsv   --OUTPUT_JSON_PATH gkb_best.prepro.jsonl
 python baseline_methods/DPR/convert_gkb_tsv.py ${CORPUS_PATH}/gkb_best.prepro.jsonl
 # This will generate `${CORPUS_PATH}/gkb_best.prepro.tsv`
 ```

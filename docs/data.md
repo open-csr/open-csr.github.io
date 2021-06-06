@@ -34,6 +34,9 @@ We present the three datasets used for studying OpenCSR, which we got by reforma
 This zip file contains train/dev/test data in *jsonl* format (i.e., each line is a dictionary in json) for ARC, OBQA, and QASC. Note that the gold annotations (i.e.,`all_answer_concepts` items) for the test sets are hidden for hosting [a shared task](/leaderboard) to fairly compare the submissions. 
 Below are two examples for **training/validation** instances:
 
+<details markdown="block">
+  <summary>Show/Hide</summary>
+
 ```json
 // Example 1 from OBQA
 {
@@ -79,7 +82,7 @@ Below are two examples for **training/validation** instances:
 
  -->
 
-Here is an example of the *test* data (the last two items are hidden):
+Here is an example of the *test* data (the answers are hidden for the shared task):
 
 ```json
 {
@@ -105,7 +108,7 @@ Here is an example of the *test* data (the last two items are hidden):
     // hidden info.
 }
 ```
-
+</details>
 
 
 **Please also cite the papers of these original datasets if you use the data here.** 
