@@ -29,15 +29,15 @@ Note that there is a relative dependency of these four methods: training the DPR
 ## Folder structure 
 
 - drfact_data/
-    - datasets/
-- drfact_data/
-    - knowledge_corpus/
+    - datasets/ **_(download from [here](/data#the-opencsr-datasets))_**
+    - knowledge_corpus/**_(download from [here](/data#the-commonsense-knowledge-corpus))_**
 - baseline_methods/
     - BM25/
     - DPR/
     - MCQA/     **_(i.e., Concept Re-ranker)_**
-- language-master/  **_(for DrKIT)_**
-- drfact/   
+- language-master/language/labs/  
+    - drkit/    **_(common modules for DrKIT and DrFact)_**
+    - drfact/   **_(for running DrFact)_**
 
 
 
