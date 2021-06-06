@@ -85,7 +85,7 @@ INDEX_NAME=drkit_mention_index
 ### Data preprocessing.
 
 ```bash
-python -m drfact.index_corpus \
+python -m language.labs.drfact.index_corpus \
 --do_preprocess \
 --concept_vocab_file ${CORPUS_PATH}/gkb_best.vocab.txt \
 --corpus_file ${CORPUS_PATH}/gkb_best.drfact_format.jsonl \
@@ -102,7 +102,7 @@ python -m drfact.index_corpus \
 for (( c=0; c<=3; c++ )) # Assuming you have 4 gpus.
 do
   CUDA_VISIBLE_DEVICES=$c \
-  python -m drfact.index_corpus \
+  python -m language.labs.drfact.index_corpus \
     --do_embed --do_embed_mentions \
     --concept_vocab_file ${CORPUS_PATH}/gkb_best.vocab.txt \
     --corpus_file ${CORPUS_PATH}/gkb_best.drfact_format.jsonl \
@@ -132,7 +132,7 @@ wait
 ### Combine the shards.
 
 ```bash
-python -m drfact.index_corpus \
+python -m language.labs.drfact.index_corpus \
 --do_combine \
 --do_embed_mentions \
 --max_entity_length 5 \
@@ -218,7 +218,7 @@ GPUS=0 OUT_DIR=${ODIR} DATASET=${DATA} bash run_drkit.sh \
     touch ${LOG_FILE}
 
 
-    CUDA_VISIBLE_DEVICES=${GPUS} python -m drfact.run_drfact \
+    CUDA_VISIBLE_DEVICES=${GPUS} python -m language.labs.drfact.run_drfact \
     --vocab_file ${BERT_PATH}/vocab.txt \
     --tokenizer_model_file None \
     --bert_config_file ${BERT_PATH}/bert_config.json \

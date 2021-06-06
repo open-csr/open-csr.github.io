@@ -66,7 +66,7 @@ INDEX_PATH=drfact_data/local_index/
 ### Corpus preprocessing.
 
 ```bash
-python -m drfact.index_corpus \
+python -m language.labs.drfact.index_corpus \
 --do_preprocess \
 --concept_vocab_file ${CORPUS_PATH}/gkb_best.vocab.txt \
 --corpus_file ${CORPUS_PATH}/gkb_best.drfact_format.jsonl \
@@ -83,7 +83,7 @@ python -m drfact.index_corpus \
 ```bash
 for (( c=0; c<=94; c++ ))   # assume you have 95 CPUs.
 do
-   python -m drfact.fact2fact_index \
+   python -m language.labs.drfact.fact2fact_index \
     --do_preprocess \
     --corpus_file ${CORPUS_PATH}/gkb_best.drfact_format.jsonl \
     --fact2fact_index_dir ${INDEX_PATH}/fact2fact_index \
@@ -93,7 +93,7 @@ done
 
 # Combine the single files into a single file.
 
-python -m drfact.fact2fact_index \
+python -m language.labs.drfact.fact2fact_index \
   --do_combine \
   --corpus_file ${CORPUS_PATH}/gkb_best.drfact_format.jsonl \
   --fact2fact_index_dir ${INDEX_PATH}/fact2fact_index \
@@ -107,7 +107,7 @@ Note that you need to run the [DPR](/methods/dpr) training first.
 declare -a datasets=("ARC" "OBQA" "QASC")
 for DATA_NAME in "${datasets[@]}"
 do
-  python -m drfact.convert_dpr_index \
+  python -m language.labs.drfact.convert_dpr_index \
   --index_result_path ${INDEX_PATH}/drfact_fact_index \
   --dpr_pkl_path drfact_data/${DATA_NAME}_dpr_index_0.pkl \
   --embed_prefix ${DATA_NAME}_dpr_bert_base 
