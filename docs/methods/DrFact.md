@@ -113,10 +113,7 @@ do
   --embed_prefix ${DATA_NAME}_dpr_bert_base 
 done 
 ```
-
-**Link to the original repo of DrKIT:** [google-research/language/labs/drkit/](https://github.com/google-research/language/tree/master/language/labs/drkit)
-**Link to the code for the experiment:** [google-research/drfact/](https://github.com/google-research/google-research/tree/master/drfact)
-
+ 
 ### Generate distant supervision. (Optional)
 
 
