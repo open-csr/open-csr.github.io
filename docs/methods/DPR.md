@@ -27,7 +27,7 @@ Please cite the original paper
 }
 ```
 
-**Link to the code for the experiment:** [OpenCSR/baseline_methods/DPR/](https://github.com/yuchenlin/OpenCSR/baseline_methods/DPR)
+**Link to the code for the experiment:** [OpenCSR/baseline_methods/DPR/](https://github.com/yuchenlin/OpenCSR/tree/main/baseline_methods/DPR)
 
 ---
 
@@ -50,8 +50,10 @@ pip install spacy
 ## Preprocessing 
 
 ### Step 1. Transform the data format of the corpus.
+**You can skip this step**. We have included the processed tsv file at `drfact_data/knowledge_corpus/gkb_best.prepro.tsv`.
 ```bash
 python baseline_methods/DPR/convert_gkb_tsv.py ${CORPUS_PATH}/gkb_best.prepro.jsonl
+# This will generate `${CORPUS_PATH}/gkb_best.prepro.tsv`
 ```
 
 ### Step 2. Convert the OpenCSR datasets format.

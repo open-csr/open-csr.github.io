@@ -24,7 +24,8 @@ We present the three datasets used for studying OpenCSR, which we got by reforma
 
 <!-- ### Raw Datasets -->
 
-[Download the OpenCSR datasets](https://forms.gle/VC9xdLjsLSXkjJM86){: .btn .btn-blue .fs-2 target="_blank"}
+[Download the OpenCSR datasets](https://forms.gle/VC9xdLjsLSXkjJM86){: .btn .btn-blue .fs-2 target="_blank"} 
+Please put the datasets under the folder `drfact_data/datasets/[ARC|OBQA|QASC]/`. 
 
 This zip file contains train/dev/test data in *jsonl* format (i.e., each line is a dictionary in json) for ARC, OBQA, and QASC. Note that the gold annotations (i.e.,`all_answer_concepts` items) for the test sets are hidden for hosting [a shared task](/leaderboard) to fairly compare the submissions. 
 Below are two examples for **training/validation** instances:
