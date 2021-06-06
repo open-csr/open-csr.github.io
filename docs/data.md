@@ -8,6 +8,10 @@ permalink: /data
 has_toc: true
 ---
 
+# The OpenCSR Data
+
+[The site is under development. Please email yuchen.lin@usc.edu if you have any questions.](){: .btn .btn-red .fs-4 target="_blank"}
+
 ## Table of contents
 {: .no_toc .text-delta }
 
@@ -17,7 +21,6 @@ has_toc: true
 
 ---
 
-[The site is under development. Please email yuchen.lin@usc.edu if you have any questions.](){: .btn .btn-red .fs-4 target="_blank"}
 
 ## The OpenCSR Datasets
 We present the three datasets used for studying OpenCSR, which we got by reformatting the multiple-choice QA datasets -- ARC, OBQA, and QASC. 
@@ -25,7 +28,8 @@ We present the three datasets used for studying OpenCSR, which we got by reforma
 <!-- ### Raw Datasets -->
 
 [Download the OpenCSR datasets](https://forms.gle/VC9xdLjsLSXkjJM86){: .btn .btn-blue .fs-2 target="_blank"} 
-Please put the datasets under the folder `drfact_data/datasets/[ARC|OBQA|QASC]/`. 
+
+**Please put the datasets under the folder `drfact_data/datasets/[ARC|OBQA|QASC]/`.** 
 
 This zip file contains train/dev/test data in *jsonl* format (i.e., each line is a dictionary in json) for ARC, OBQA, and QASC. Note that the gold annotations (i.e.,`all_answer_concepts` items) for the test sets are hidden for hosting [a shared task](/leaderboard) to fairly compare the submissions. 
 Below are two examples for **training/validation** instances:

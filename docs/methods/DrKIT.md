@@ -9,8 +9,8 @@ permalink: /methods/drkit
 has_toc: true
 ---
 
-# DrKIT
-{: .no_toc .text-delta }
+# DrKIT for OpenCSR
+[The site is under development. Please email yuchen.lin@usc.edu if you have any questions.](){: .btn .btn-red .fs-4 target="_blank"}
 
 - TOC
 {:toc}
@@ -30,8 +30,7 @@ Please cite the original paper
 }
 ```
 
-Note t
-**Link to the original repo of DrKIT:** [google-research/language/labs/drkit/](https://github.com/google-research/language/tree/master/language/labs/drkit)
+Note that here we reuse **the original repo of DrKIT** [google-research/language/labs/drkit/](https://github.com/google-research/language/tree/master/language/labs/drkit), and modified some code for OpenCSR. Thus, the entrance is shared with "language.labs.drfact".
 ---
 
 

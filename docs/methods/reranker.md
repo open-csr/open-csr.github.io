@@ -9,8 +9,8 @@ permalink: /methods/reranker
 has_toc: true
 ---
 
-# Concept Re-ranker
-{: .no_toc .text-delta }
+# Concept Re-ranker for OpenCSR
+[The site is under development. Please email yuchen.lin@usc.edu if you have any questions.](){: .btn .btn-red .fs-4 target="_blank"}
 
 - TOC
 {:toc}

@@ -7,8 +7,10 @@ has_toc: false
 permalink: /methods/
 ---
 
-# Methods
+# Methods for OpenCSR
 {: .no_toc}
+
+[The site is under development. Please email yuchen.lin@usc.edu if you have any questions.](){: .btn .btn-red .fs-4 target="_blank"}
 
 <!-- 
 ## Table of contents
@@ -19,10 +21,6 @@ permalink: /methods/
 
 
 ---
-
-[The site is under development. Please email yuchen.lin@usc.edu if you have any questions.](){: .btn .btn-red .fs-4 target="_blank"}
-
-# Methods for OpenCSR
 
 We show the instructions for running four retrieval approaches to the OpenCSR task --- [**BM25**](bm25) (off-the-shelf), [**DPR**](dpr) (EMNLP2020), [**DrKIT**](drkit) (ICLR 2020) and [**DrFact**](drkit) (ours, NAACL 2021), as well as a [**Concept Re-ranker**](reranker) to boost the performance by learning with cross-attention. 
 
