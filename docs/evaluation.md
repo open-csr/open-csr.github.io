@@ -2,23 +2,33 @@
 layout: default
 title: Evaluation
 nav_order: 4
-toc_list: true
+# toc_list: true
 last_modified_date: Jun 5th 2021
 permalink: /evaluation
 mathjax: true
+has_toc: true
 ---
 
 # Evaluation 
 {: .no_toc}
 
+
 [The site is under development. Please email [***yuchen.lin@usc.edu***] if you have any questions.](){: .btn .btn-red .fs-4 target="_blank"}
 
+## Table of contents
+{: .no_toc .text-delta }
+
+- TOC
+{:toc}
+
+
+
 ## Post-processing the prediction results 
-{: .no_toc}
+
 
 
 ### BM25/DPR.
-{: .no_toc}
+
 
 
 After running the inference of BM25 and DPR, we have a ranked list of retrieved *facts* with scores for each question. To get a ranked list of *concepts* as the answer as the final output, we post-process the retrieved results:
@@ -32,7 +42,7 @@ python evaluation/process_ret_results.py \
 ```
 
 ### DrKIT/DrFact
-{: .no_toc}
+
 To have a unified format of prediction result, we reformat the result files of DrKIT and DrFact as follows:
  
 ```bash
@@ -44,21 +54,21 @@ python evaluation/process_drx_results.py ${input_file} ${output_file}
 ```
 
 ### X + Concept Re-Ranker 
-{: .no_toc}
+
 This is done in [***Step 7 of the re-ranking***](/methods/dpr#step-7-dpr-retrieval-formatting-for-each-dataset){: target_blank}.
 
 ## Metrics 
-{: .no_toc}
+
 
 ### Hit@K acc and Ret@K acc
-{: .no_toc}
+
 Recall that, given a question $$q$$, the final output of every method is a weighted set of concepts $$A=\{(a_1, w_1), \dots \}$$. 
 We denote the set of true answer concepts, as defined above, as $$A^*=\{a_1^*, a_2^*, \dots \}$$.   We define **Hit@K** accuracy to be the fraction of questions for which we can find at least one correct answer concept $$a_i^*\in A^*$$ in the top-$$K$$ concepts of $$A$$ (sorted in descending order of weight). 
 As questions have multiple correct answers, recall is also an important aspect for evaluating OpenCSR, so we also 
 use **Rec@K** to evaluate the average recall of the top-K proposed answers.
 
 ### Run
-{: .no_toc}
+
 
 ```bash
 python evaluation/eval_metrics.py \
