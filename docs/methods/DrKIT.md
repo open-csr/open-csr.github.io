@@ -51,9 +51,6 @@ pip install tensorflow-hub bert-tensorflow
 pip install gdown
 pip install -e language-master
 pip install tensorflow-determinism  # for being reproducible 
-# download https://github.com/google-research/language as a zip and unzip it.
-pip install -e language-master
-pip install tensorflow-determinism  # for being reproducible 
 git clone https://github.com/google-research/albert.git # add albert
 pip install -r albert/requirements.txt
 ```
