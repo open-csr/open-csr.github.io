@@ -29,12 +29,16 @@ This is the project page of the paper, [_Differentiable Open-Ended Commonsense R
 research internship at [Google](https://research.google/research-areas/natural-language-processing/){: target="_blank"}.
 
 ```bib
-@inproceedings{lin2021opencsr,
-  title={Differentiable Open-Ended Commonsense Reasoning},
-  author={Bill Yuchen Lin, Haitian Sun, Bhuwan Dhingra, Manzil Zaheer, Xiang Ren, William W. Cohen},
-  booktitle={NAACL-HLT},
-  year={2021},
-  note={to appear}
+@inproceedings{lin-etal-2021-differentiable,
+    title = "Differentiable Open-Ended Commonsense Reasoning",
+    author = "Lin, Bill Yuchen and Sun, Haitian and Dhingra, Bhuwan and Zaheer, Manzil and Ren, Xiang and Cohen, William",
+    booktitle = "Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies",
+    month = jun,
+    year = "2021",
+    address = "Online",
+    publisher = "Association for Computational Linguistics",
+    url = "https://www.aclweb.org/anthology/2021.naacl-main.366",
+    pages = "4611--4625"
 }
 ```
 ---

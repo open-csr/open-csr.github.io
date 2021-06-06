@@ -24,36 +24,39 @@ We present the three datasets used for studying OpenCSR, which we got by reforma
 
 <!-- ### Raw Datasets -->
 
-[Download](){: .btn .btn-blue .fs-2 target="_blank"}
+[Download the OpenCSR datasets](https://forms.gle/VC9xdLjsLSXkjJM86){: .btn .btn-blue .fs-2 target="_blank"}
 
 This zip file contains train/dev/test data in *jsonl* format (i.e., each line is a dictionary in json) for ARC, OBQA, and QASC. Note that the gold annotations (i.e.,`all_answer_concepts` items) for the test sets are hidden for hosting [a shared task](/leaderboard) to fairly compare the submissions. 
 Below are two examples for **training/validation** instances:
 
 ```json
-// Example 1
+// Example 1 from OBQA
 {
-  "_id": "OBQA-257",  
+  "_id": "257",  
     // unique example id
   "question": "Global warming is lowering the world's amount of ( ___ ) ",  
     // input: question text
-  "question_concepts": ["global warming", "global", "warming", "world", "amount"],  
-    // supplmentary info: simple concept matching over the question text.
-  "original_choice_text": "ice", 
-    // supplmentary info: correct choice of the original data
-  "all_answer_concepts": ["ice"],
-    // output: answer concepts that a model needs to retrieve
-  "all_answer_concepts_decomp": ["ice"]
-    // supplmentary info: the decomposition of the "all_answer_concepts"
+  "entities": [{"kb_id": "global warming", "name": "global warming"}, ...],  
+    // supplementary info: simple concept matching over the question text. "kb_id" and "name" are the same.
+  "all_answer_concepts": [{"kb_id": "ice", "name": "ice"}],
+    // output: answer concepts that a model needs to retrieve. there is a duplicate key "answer_concepts"
+  "all_answer_concepts_decomp": [{"kb_id": "ice", "name": "ice"}],
+    // supplementary info: the decomposition of the "all_answer_concepts"
+  "answer": "ice"
+    // supplementary info: original text of the correct choice.
 }
 
-// Example 2
+// Example 2 from ARC
 {
-  "_id": "ARC-Mercury_7267873", 
+  "_id": "Mercury_7267873", 
   "question": "What provide the best evidence that life could develop on Mars?", 
-  "question_concepts": ["evidence", "life", "develop", "mars"], 
-  "original_choice_text": "its ice and organic molecules", 
-  "all_answer_concepts": ["organic molecule", "ice"],
-  "all_answer_concepts_decomp": ["organic molecule", "ice", "organic", "molecule"]
+  "entities": [{"kb_id": "good", "name": "good"}, {"kb_id": "evidence", "name": "evidence"}, {"kb_id": "life", "name": "life"}, {"kb_id": "develop", "name": "develop"}, {"kb_id": "mars", "name": "mars"}],
+  "all_answer_concepts": [
+    {"kb_id": "organic molecule", "name": "organic molecule"}, 
+    {"kb_id": "ice", "name": "ice"}
+  ],
+  "all_answer_concepts_decomp": [{"kb_id": "organic molecule", "name": "organic molecule"}, {"kb_id": "ice", "name": "ice"}, {"kb_id": "organic", "name": "organic"}, {"kb_id": "molecule", "name": "molecule"}],
+  "answer": "its ice and organic molecules" // original text of the correct choice.
 }
 ```
 <!-- 
@@ -75,16 +78,26 @@ Here is an example of the *test* data (the last two items are hidden):
 
 ```json
 {
-  "_id": "ARC-Mercury_SC_400328", 
+  "_id": "Mercury_SC_400328", 
     // unique example id
   "question": "What item is used for protection from chemical splashing?", 
-  "question_concepts": ["chemical splashing", "item", "use", "protection", "chemical"], 
-    // supplmentary info: simple concept matching over the question text.
-  "original_choice_text": "safety goggle", 
+  "entities": ["chemical splashing", "item", "use", "protection", "chemical"], 
+    // supplementary info: simple concept matching over the question text.
+  "all_answer_concepts": [ // hidden info; used for evaluaiton. 
+    {"kb_id": "safety goggle", "name": "safety goggle"},
+    {"kb_id": "lab coat", "name": "lab coat"},
+    {"kb_id": "rubber boot", "name": "rubber boot"},
+    {"kb_id": "protective glove", "name": "protective glove"},
+    {"kb_id": "face shield", "name": "face shield"},
+    {"kb_id": "helmet", "name": "helmet"},
+    {"kb_id": "shoe", "name": "shoe"},
+    {"kb_id": "glass", "name": "glass"},
+    {"kb_id": "goggle", "name": "goggle"},
+    {"kb_id": "glove", "name": "glove"},
+    {"kb_id": "coverall", "name": "coverall"}
+  ],  // Note that the first one is from the original choice, and others are from our crowdsourcing.
+  "answer": "safety goggle",  // original text of the correct choice.
     // hidden info.
-  "all_answer_concepts": ["safety goggle", "lab coat", "rubber boot", "protective glove", "face shield", "helmet", "shoe", "glass", "goggle", "glove", "coverall"] 
-    // hidden info; used for evaluaiton. 
-    // The first one is from the original choice, and others are from our crowdsourcing.
 }
 ```
 
@@ -122,7 +135,7 @@ This zip file contains the same data as above, while it also includes results of
 
 ## The Commonsense Knowledge Corpus
 
-[Download](){: .btn .btn-blue .fs-2 target="_blank"}
+[Download the Preprocessed Corpus](https://mega.nz/folder/9ToQWLQJ#PxGYM-wymiOI4YRCNyyafA){: .btn .btn-blue .fs-2 target="_blank"}
 
 We use the [GenericsKB](https://allenai.org/data/genericskb){: target="_blank"} as our knowledge corpus. We preprocess the coprus, extract the frequent concepts, and finally link the facts to their mentioned concepts. The link contains two files:
 
