@@ -156,7 +156,7 @@ rm ${INDEX_PATH}/drkit_mention_index/${PREFIX}_fact_feats_*.*
 
 ```bash
 DATA=ARC
-ODIR=~/drfact_models/drkit_models_${DATA}
+ODIR=~/saved_models/drkit_models_${DATA}
 HOP=3 # can be any integer.
 GPUS=0 OUT_DIR=${ODIR} DATASET=${DATA} bash scripts/run_drkit.sh train ${HOP}   # Training
 GPUS=1 OUT_DIR=${ODIR} DATASET=${DATA} bash scripts/run_drkit.sh continual_eval ${HOP}  # Online Evaluation on Dev
@@ -168,7 +168,7 @@ GPUS=1 OUT_DIR=${ODIR} DATASET=${DATA} bash scripts/run_drkit.sh continual_eval 
 
 ```bash
 DATA=ARC
-ODIR=~/drfact_models/drkit_models_${DATA}
+ODIR=~/saved_models/drkit_models_${DATA}
 HOP=3
 GPUS=0 OUT_DIR=${ODIR} DATASET=${DATA} bash scripts/run_drkit.sh \
     predict ${HOP} [checkpoint_name] [train|dev|test] 
