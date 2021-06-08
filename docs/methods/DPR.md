@@ -87,7 +87,7 @@ do
       --dataset_name ${DATA_NAME} \
       --linked_qas_file ${DATA_FOLDER}/linked_${SPLIT}.jsonl \
       --drfact_format_gkb_file  ${CORPUS_PATH}/gkb_best.drfact_format.jsonl \
-      --ret_result_file ${DATA_FOLDER}/linked_${SPLIT}.jsonl.BM25.jsonl \
+      --ret_result_file ${DATA_FOLDER}/linked_${SPLIT}.BM25.jsonl \
       --output_file baseline_methods/DPR/dpr_train_data/${DATA_NAME}_${SPLIT}.dpr_format.jsonl &
   done
 done

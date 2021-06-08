@@ -145,7 +145,7 @@ done
       python -m language.labs.drfact.add_sup_facts \
         --linked_qas_file ${DATA_FOLDER}/linked_${SPLIT}.jsonl \
         --drfact_format_gkb_file  ${CORPUS_PATH}/gkb_best.drfact_format.jsonl \
-        --ret_result_file ${DATA_FOLDER}/linked_${SPLIT}.jsonl.${RET}.jsonl \
+        --ret_result_file ${DATA_FOLDER}/linked_${SPLIT}.${RET}.jsonl \
         --output_file ${DATA_FOLDER}/linked_${SPLIT}.sup_facts_from_${RET}.jsonl \
         --concept_vocab_file drfact_data/knowledge_corpus/gkb_best.vocab.txt \
         --max_num_facts 50 --split ${SPLIT} &
@@ -211,7 +211,7 @@ do
     python -m language.labs.drfact.add_init_facts \
       --linked_qas_file ${DATA_FOLDER}/linked_${SPLIT}.jsonl \
       --drfact_format_gkb_file  ${CORPUS_PATH}/gkb_best.drfact_format.jsonl \
-      --ret_result_file ${DATA_FOLDER}/linked_${SPLIT}.jsonl.${RET}.jsonl \
+      --ret_result_file ${DATA_FOLDER}/linked_${SPLIT}.${RET}.jsonl \
       --sup_facts_file ${SUP_FACT} \
       --output_file ${DATA_FOLDER}/linked_${SPLIT}.init_facts.jsonl \
       --max_num_facts ${COUNT} --split ${SPLIT} &
