@@ -10,7 +10,7 @@ permalink: /methods/
 # Methods for OpenCSR
 {: .no_toc}
 
-[The site is under development. Please email [***yuchen.lin@usc.edu***] if you have any questions.](){: .btn .btn-red .fs-4}
+
 
 <!-- 
 ## Table of contents

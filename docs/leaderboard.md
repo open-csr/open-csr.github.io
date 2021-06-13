@@ -10,6 +10,6 @@ permalink: /leaderboard
 # Leaderboard
 {: .no_toc}
 
-[The site is under development. Please email [***yuchen.lin@usc.edu***] if you have any questions.](){: .btn .btn-red .fs-4}
+
 
 ***Coming soon.***
