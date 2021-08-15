@@ -34,8 +34,19 @@ th, td{
     border-left: 0; 
 }
 
+td.best {
+    color: black;
+    font-weight: 800;
+}
+
+th{
+    color: black;
+    font-weight: 800;
+}
 th.model {
     min-width: 120px;
+    font-weight: 800;
+
 }
 
 #hit {
@@ -48,7 +59,10 @@ th.model {
 
 .avg{
     font-weight: 800;
-    color: green;
+    color: black;
+    /* color: green; */
+    text-decoration: underline;
+    font-style: italic;
 }
 
 </style>
@@ -178,12 +192,12 @@ Please submit a ***.jsonl*** file follows the format below, each line is for a q
     <td>80.56</td>
   </tr>
   <tr>
-    <td> <a href="" target="_blank">DrFact+Reranker</a></td>
-    <td class="tooltip"><a>USC-INK</a> <span class="tooltiptext">yuchen.lin@usc.edu <br> 2021-01-01</span> </td>
-    <td>84.19</td>
-    <td>89.87</td>
-    <td>85.78</td>
-    <td>86.61</td>
+    <td class="best"> <a href="" target="_blank">DrFact+Reranker</a></td>
+    <td class="best" class="tooltip"><a>USC-INK</a> <span class="tooltiptext">yuchen.lin@usc.edu <br> 2021-01-01</span> </td>
+    <td class="best">84.19</td>
+    <td class="best">89.87</td>
+    <td class="best">85.78</td>
+    <td class="best">86.61</td>
   </tr>
 </tbody>
 </table>
@@ -262,12 +276,12 @@ Please submit a ***.jsonl*** file follows the format below, each line is for a q
     <td>39.15</td>
   </tr>
   <tr>
-    <td> <a href="" target="_blank">DrFact+Reranker</a></td>
-    <td class="tooltip"><a>USC-INK</a> <span class="tooltiptext">yuchen.lin@usc.edu <br> 2021-01-01</span> </td>
-    <td>47.73</td>
-    <td>44.30</td>
-    <td>39.60</td>
-    <td>43.88</td>
+    <td class="best"> <a href="" target="_blank">DrFact+Reranker</a></td>
+    <td class="best" class="tooltip"><a>USC-INK</a> <span class="tooltiptext">yuchen.lin@usc.edu <br> 2021-01-01</span> </td>
+    <td class="best">47.73</td>
+    <td class="best">44.30</td>
+    <td class="best">39.60</td>
+    <td class="best">43.88</td>
   </tr>
 </tbody>
 </table>
