@@ -15,8 +15,8 @@ permalink: /leaderboard
 
 
 ## Submission Instruction
-If you have a model and would like to make a submission, you can create a submission [***here***](https://opencsr-leaderboard.herokuapp.com) and evaluate your predictions. 
-
+If you have a model and would like to make a submission, you can create a submission [***here***](https://opencsr-leaderboard.herokuapp.com) and evaluate your predictions (see the format below). 
+Your submission will be reviewed by our team and added to the leaderboard here.
 
 ### Submission Format
 Please submit a ***.jsonl*** file follows the format below, each line is for a question
@@ -27,4 +27,7 @@ Please submit a ***.jsonl*** file follows the format below, each line is for a q
 ...
 ```
 
-Your submission will be reviewed by the X-CSR team and added to the leaderboard.
+
+
+
+## Results 
